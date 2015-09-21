@@ -18,6 +18,31 @@ module.exports = function(defaults) {
   // modules that you would like to import into your application
   // please specify an object with the list of modules as keys
   // along with the exports of each module as its value.
+  app.import('bower_components/inconsolata-webfont/css/inconsolata-webfont.css');
+  app.import('bower_components/inconsolata-webfont/fonts/inconsolata-bold.eot', {
+    destDir: 'font'
+  });
+  app.import('bower_components/inconsolata-webfont/fonts/inconsolata-bold.ttf', {
+  destDir: 'font'
+  });
+  app.import('bower_components/inconsolata-webfont/fonts/inconsolata-bold.woff', {
+    destDir: 'font'
+  });
+  app.import('bower_components/inconsolata-webfont/fonts/inconsolata-bold.woff2', {
+    destDir: 'font'
+  });
+  app.import('bower_components/inconsolata-webfont/fonts/inconsolata-regular.eot', {
+  destDir: 'font'
+  });
+  app.import('bower_components/inconsolata-webfont/fonts/inconsolata-regular.ttf', {
+  destDir: 'font'
+  });
+  app.import('bower_components/inconsolata-webfont/fonts/inconsolata-regular.woff', {
+  destDir: 'font'
+  });
+  app.import('bower_components/inconsolata-webfont/fonts/inconsolata-regular.woff2', {
+  destDir: 'font'
+  });
 
   return app.toTree();
 };

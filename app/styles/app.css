@@ -1,0 +1,37 @@
+@font-face {
+	font-family: Inconsolata;
+	src: url('../font/inconsolata-regular.eot');
+	src: url('../font/inconsolata-regular.ttf') format('truetype'),
+			 url('../font/inconsolata-regular.woff') format('woff'),
+			 url('../font/inconsolata-regular.woff2') format('woff2'),
+			 url('../font/inconsolata-regular.eot') format('embedded-opentype');
+	font-weight: normal;
+}
+
+@font-face {
+	font-family: Inconsolata;
+	src: url('../font/inconsolata-bold.eot');
+	src: url('../font/inconsolata-bold.ttf') format('truetype'),
+			 url('../font/inconsolata-bold.woff') format('woff'),
+			 url('../font/inconsolata-bold.woff2') format('woff2'),
+			 url('../font/inconsolata-bold.eot') format('embedded-opentype');
+	font-weight: bold;
+}
+
+body {
+	font-family: Inconsolata;
+	font-style: normal;
+	font-variant: normal;
+	background-color: #111;
+	color: #aaa;
+
+}
+
+a {
+	text-decoration: none;
+	color: #aaa;
+}
+
+a:hover {
+	color: #ddd;
+}
