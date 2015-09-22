@@ -1,0 +1,18 @@
+<pre>
+{{current}}
+</pre>
+
+{{#if playcontrols}}
+	{{play-button action='play' text='play'}}
+	{{play-button action='stop' text='stop'}}
+	{{play-button action='reset' text='reset'}}
+	{{#if speedcontrols}}
+		{{play-button action='slow' text='slow'}}
+		{{play-button action='speed' text='speed'}}
+	{{/if}}
+{{/if}}
+<p>
+{{#if displayconsole}}
+	{{play-button text=console}}
+{{/if}}
+</p>

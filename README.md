@@ -1,53 +1,24 @@
-# Reel-to-reel
+# REEL-TO-REEL
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+reel-to-reel provides a simple player for ascii animations.
 
-## Prerequisites
+the ascii-player component expects a frames array, with each frame as an escaped(?) string to be placed in a <pre> tag. see examples in the 'models' folder.
 
-You will need the following things properly installed on your computer.
+## SETTINGS
 
-* [Git](http://git-scm.com/)
-* [Node.js](http://nodejs.org/) (with NPM)
-* [Bower](http://bower.io/)
-* [Ember CLI](http://www.ember-cli.com/)
-* [PhantomJS](http://phantomjs.org/)
+currently implemented settings:
 
-## Installation
+displayconsole
+playcontrols
+speedcontrols
+interval
+framecount
 
-* `git clone <repository-url>` this repository
-* change into the new directory
-* `npm install`
-* `bower install`
+future settings:
 
-## Running / Development
+autoplay
+loop/continuous
 
-* `ember server`
-* Visit your app at [http://localhost:4200](http://localhost:4200).
+## HELP
 
-### Code Generators
-
-Make use of the many generators for code, try `ember help generate` for more details
-
-### Running Tests
-
-* `ember test`
-* `ember test --server`
-
-### Building
-
-* `ember build` (development)
-* `ember build --environment production` (production)
-
-### Deploying
-
-Specify what it takes to deploy your app.
-
-## Further Reading / Useful Links
-
-* [ember.js](http://emberjs.com/)
-* [ember-cli](http://www.ember-cli.com/)
-* Development Browser Extensions
-  * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
-  * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
-
+please to have suggestions for how to negotiate with strings and Ember (safestring?) and maybe avoid the pre tags. i.e. another way to compose the model?

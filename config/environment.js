@@ -2,6 +2,9 @@
 
 module.exports = function(environment) {
   var ENV = {
+    contentSecurityPolicy: {
+      'script-src': 'self'
+    },
     modulePrefix: 'reel-to-reel',
     environment: environment,
     baseURL: '/',
