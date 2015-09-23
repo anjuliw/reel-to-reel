@@ -20,9 +20,11 @@ framecount
 
 autoplay
 
+loop/continuous
+
 **future settings:**
 
-loop/continuous
+ideas?
 
 ### HELP
 

@@ -1,7 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-	classNames: ['tank', 'player'],
+	classNames: ['player'],
 	ticks: 0,
 	ticking: false,
 
@@ -17,8 +17,8 @@ export default Ember.Component.extend({
 	playcontrols: true,
 	displayconsole: false,
 	speedcontrols: false, 
-	// autoplay: false,
-	// loop: true,
+	autoplay: false,
+	loop: true,
 	//////////////////////////
 
 	frames: [], 	// passed-in, array of (escaped?) strings, see examples in model
@@ -40,10 +40,14 @@ export default Ember.Component.extend({
 	tick: function() {
 		Ember.run.later(this, function() {
 			if (this.get('ticking')) {
-				if (this.get('ticks') < this.get('framecount') - 1) {
-					this.incrementProperty('ticks');
+				if(this.get('loop')) {
+					if (this.get('ticks') < this.get('framecount') - 1) {
+						this.incrementProperty('ticks');
+					} else {
+						this.set('ticks', 0);		// reset loop
+					}
 				} else {
-					this.set('ticks', 0);		// reset at the end of loop
+					this.incrementProperty('ticks');
 				}
 			}
 		}, this.get('interval'));
@@ -52,26 +56,25 @@ export default Ember.Component.extend({
 	init() {
 		this._super();
 		if (this.get('autoplay')) {
-			console.log('in autoplay!');
 			this.set('ticking', true);
-			this.tick();
+			if (this.get('ticking')) { this.tick(); }
 		}
 	},
 
 	actions: {
-		reset() {
-			this.set('ticking', false);
-			this.set('ticks', 0);
-		},
 
 		play() {
 			this.set('ticking', true);
-			//this.incrementProperty('ticks');
-			this.tick();
+			if (this.get('ticking')) { this.tick(); }
+		},
+
+		pause() {
+			this.set('ticking', false);
 		},
 
 		stop() {
 			this.set('ticking', false);
+			if(!this.get('ticking')) { this.set('ticks', 0); }
 		},
 
 		slow() {
