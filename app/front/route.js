@@ -10,6 +10,6 @@ export default Ember.Route.extend({
 		return {
 			solofish: solofish,
 			plantfish: plantfish
-		}
+		};
 	}
 });

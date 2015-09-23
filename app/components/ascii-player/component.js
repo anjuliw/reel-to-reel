@@ -22,6 +22,9 @@ export default Ember.Component.extend({
 	//////////////////////////
 
 	frames: [], 	// passed-in, array of (escaped?) strings, see examples in model
+	current: Ember.computed('ticks','frames', function () {
+		return this.get('frames')[this.get('ticks')];
+	}),
 
 	ticker: Ember.computed('ticks', function() {
 		return this.get('ticks') + ' ticks';
@@ -40,15 +43,20 @@ export default Ember.Component.extend({
 				if (this.get('ticks') < this.get('framecount') - 1) {
 					this.incrementProperty('ticks');
 				} else {
-					this.set('ticks', 0);
+					this.set('ticks', 0);		// reset at the end of loop
 				}
 			}
 		}, this.get('interval'));
 	}.observes('ticks'),
 
-	current: Ember.computed('ticks', function () {
-		return this.get('frames')[this.get('ticks')];
-	}),
+	init() {
+		this._super();
+		if (this.get('autoplay')) {
+			console.log('in autoplay!');
+			this.set('ticking', true);
+			this.tick();
+		}
+	},
 
 	actions: {
 		reset() {
@@ -58,7 +66,8 @@ export default Ember.Component.extend({
 
 		play() {
 			this.set('ticking', true);
-			this.incrementProperty('ticks');
+			//this.incrementProperty('ticks');
+			this.tick();
 		},
 
 		stop() {

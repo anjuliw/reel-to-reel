@@ -18,9 +18,9 @@ interval
 
 framecount
 
-**future settings:**
-
 autoplay
+
+**future settings:**
 
 loop/continuous
 
